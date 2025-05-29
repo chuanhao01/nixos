@@ -8,6 +8,7 @@ in
   imports = [
     "${programsRoot}/git/home.nix"
     "${programsRoot}/nvim/home.nix"
+    "${programsRoot}/tmux/home.nix"
     "${programsRoot}/zsh/home.nix"
   ];
 
