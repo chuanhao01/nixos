@@ -13,9 +13,9 @@ link-machine-dotfiles:
 link-nixos:
 	sudo ln -s ${PWD} /etc/nixos
 
-.PHONY: pull-submodules
-pull-submodules:
-	git submodules update --init --recursive
+.PHONY: pull-submodule
+pull-submodule:
+	git submodule update --init --recursive
 
 .PHONY: help
 help:
