@@ -14,6 +14,8 @@ In the `users/chuanhao01`
 
 - chuanhao01's passwd
   - `mkpasswd > chuanhao01.passwd`
+- pulling all submodules
+  - `make pull-submodules`
 - machine-dotfiles linking
   - `make link-machine-dotfiles`
 - ssh keys to be used by github
