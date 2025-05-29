@@ -4,5 +4,8 @@
     "editor.tabSize": 2,
     "editor.defaultFormatter": "jnoortheen.nix-ide",
     "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false
   }
 }
