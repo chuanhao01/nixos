@@ -1,0 +1,33 @@
+# To configure before installing system
+# 1. Editor
+# 2. gpg
+# 3. git profiles based on folders
+
+# Default configs to be shared among all
+#[user]
+    #email =
+    #name =
+    #signingkey =
+[core]
+    editor = {{@@ EDITOR @@}}
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+    # Be able to abort all diffs with `:cq` or `:cquit`
+    trustExitCode = true
+[difftool "vimdiff"]
+    path = {{@@ EDITOR @@}}
+[commit]
+    template = ~/.config/git/gitcommitmessage
+[pull]
+    rebase = false
+[init]
+    defaultBranch = master
+
+#[gpg]
+    #program = gpg
+
+# Based on path, load the correct profile git configs
+# [includeIf "gitdir:~/some/dir/"]
+# 	path = ~/.machine-dotfiles/git/profiles/some-profile

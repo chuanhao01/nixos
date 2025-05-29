@@ -1,0 +1,9 @@
+[user]
+    email =
+    name =
+    #signingkey =
+[core]
+    sshCommand = ssh -i ~/.ssh/SSH_IDENTITY_PATH
+[commit]
+    # For gpgsigning on commit
+    #gpgsign = true
