@@ -43,6 +43,7 @@ in
     custom = "$HOME/.machine-dotfiles/zsh";
     theme = "powerlevel10k/powerlevel10k";
   };
+  programs.tmux.extraConfig = "source-file ~/.machine-dotfiles/tmux/.tmux.conf";
 
   programs.direnv = {
     enable = true;
