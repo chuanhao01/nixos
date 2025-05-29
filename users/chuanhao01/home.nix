@@ -44,6 +44,8 @@ in
     theme = "powerlevel10k/powerlevel10k";
   };
   programs.tmux.extraConfig = ''
+    set-environment -g TMUX_CONF "$HOME/.machine-dotfiles/tmux/.tmux/.tmux.conf"
+    set-environment -g TMUX_CONF_LOCAL "$HOME/.machine-dotfiles/tmux/.tmux.conf.local"
     source-file ~/.machine-dotfiles/tmux/.tmux/.tmux.conf
     source-file ~/.machine-dotfiles/tmux/.tmux.conf.local
   '';
