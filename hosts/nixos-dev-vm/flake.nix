@@ -37,6 +37,9 @@ in
         # Enable touchpad support (enabled default in most desktopManager).
         services.libinput.enable = true;
 
+        # Tailscale to allow for subnet routing and exit nodes
+        services.tailscale.useRoutingFeatures = "both";
+
       }
     )
 
