@@ -21,5 +21,8 @@
     nixosConfigurations.nixos-dev-vm = nixpkgs.lib.nixosSystem (
       import ./hosts/nixos-dev-vm/flake.nix { inherit usersRoot programsRoot inputs; }
     );
+    nixosConfigurations.nixos-yoga-730 = nixpkgs.lib.nixosSystem (
+      import ./hosts/yoga-730/flake.nix { inherit usersRoot programsRoot inputs; }
+    );
   };
 }

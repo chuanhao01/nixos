@@ -1,9 +1,9 @@
 .PHONY: default
 default: help
 
-.PHONY: rebuild
-rebuild:
-	sudo nixos-rebuild switch
+.PHONY: yoga-730
+yoga-730:
+	sudo nixos-rebuild switch --flake "/etc/nixos#nixos-yoga-730"
 
 .PHONY: link-machine-dotfiles
 link-machine-dotfiles:
