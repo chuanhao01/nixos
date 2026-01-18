@@ -1,0 +1,29 @@
+configuration {
+  modi: "window,drun,ssh,keys";
+  // Movement
+  kb-row-left: "Control+h";
+  kb-row-right: "Control+l";
+  kb-row-up: "Control+k,Up,Control+p,ISO_Left_Tab";
+  kb-row-down: "Control+j,Down,Control+n,Shift+ISO_Left_Tab";
+  // Resolve Conflicts
+  kb-element-next: "";
+  kb-element-prev: "";
+  kb-accept-entry: "Control+m,Return,KP_Enter";
+  kb-remove-to-eol: "";
+  kb-remove-char-back: "BackSpace,Shift+BackSpace";
+  kb-mode-complete: "";
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+  drun {
+    // Allow only user applications files to show up
+    // Controlled by dotdrop as well
+    parse-user: true;
+    parse-system: true;
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  // Files
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  // Editor
+  "editor.cursorStyle": "line",
+  "editor.lineNumbers": "relative",
+  "editor.fontWeight": "normal",
+  "editor.fontFamily": "'Monoid', 'Source Code Pro', 'DejaVu Sans Mono', 'MesloLGS NF', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": true,
+  "editor.guides.bracketPairs": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.suggest.showStatusBar": true,
+  // Terminal
+  "terminal.integrated.fontFamily": "'MesloLGS NF'",
+  // VSCode
+  "breadcrumbs.enabled": true,
+  "zenMode.hideLineNumbers": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Oceanic Plus",
+  // --- Extension Settings ---
+  // VSCodeVim
+  "vim.sneak": true,
+  "vim.camelCaseMotion.enable": true,
+  "vim.sneakReplacesF": true,
+  "vim.replaceWithRegister": true,
+  "vim.foldfix": true,
+  "vim.easymotion": true,
+  "vim.handleKeys": {
+    "<C-p>": false
+  }, // Extension
+  // --- Language Settings ---
+  "[python]": {
+    "editor.tabSize": 4
+  },
+  "[javascript][javascriptreact][typescript][typescriptreact][json][jsonc][cpp][markdown]": {
+    "editor.tabSize": 2
+  },
+  "[html][javascript][json][jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+  // >>> js settings >>>
+}
