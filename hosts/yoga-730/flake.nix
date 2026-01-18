@@ -34,8 +34,8 @@ in
         # Hostname
         networking.hostName = "nixos-yoga-730"; # Define your hostname.
 
-	    #Enable wifi hardware firmware
-	    hardware.enableRedistributableFirmware = true;
+        #Enable wifi hardware firmware
+        hardware.enableRedistributableFirmware = true;
 
         # Enable touchpad support (enabled default in most desktopManager).
         services.libinput.enable = true;
