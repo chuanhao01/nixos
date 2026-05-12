@@ -11,11 +11,12 @@
 
   environment.systemPackages = with pkgs; [
     x11vnc
-    anydesk
+    # anydesk
     # xorg.xvfb
-    # xorg.xrandr
+    xorg.xrandr
     # virtualglLib
   ];
+
   # Ports to allow VNC traffic through
   networking.firewall.allowedTCPPorts = [ 5900 ];
   # systemd.services.headless-x11vnc = {

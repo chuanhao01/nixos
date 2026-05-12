@@ -29,6 +29,9 @@ in
           # programs
           "${programsRoot}/docker/config.nix"
           "${programsRoot}/tailscale/config.nix"
+
+          "${programsRoot}/qtile/config.nix"
+          "${programsRoot}/kitty/config.nix"
         ];
 
         # Hostname
@@ -54,6 +57,9 @@ in
       home-manager.users.chuanhao01 = {
         imports = [
           "${usersRoot}/chuanhao01/home.nix"
+
+          "${programsRoot}/qtile/home.nix"
+          "${programsRoot}/kitty/home.nix"
         ];
       };
     }
