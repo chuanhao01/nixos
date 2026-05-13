@@ -9,6 +9,7 @@ in
     "${programsRoot}/git/home.nix"
     "${programsRoot}/nvim/home.nix"
     "${programsRoot}/tmux/home.nix"
+    "${programsRoot}/vscode/home.nix"
     "${programsRoot}/zsh/home.nix"
   ];
 
@@ -17,9 +18,11 @@ in
 
   # Building off git imported from programs
   programs.git = {
-    userName = "chuanhao01";
-    userEmail = "34702921+chuanhao01@users.noreply.github.com";
-    extraConfig = {
+    settings = {
+      user = {
+        name = "chuanhao01";
+        email = "34702921+chuanhao01@users.noreply.github.com";
+      };
       core = {
         editor = "nvim";
       };
@@ -59,7 +62,12 @@ in
   services.ssh-agent.enable = true;
   programs.ssh = {
     enable = true;
-    addKeysToAgent = "1h"; # or "ask" for confirmation
+    enableDefaultConfig = false;
+    matchBlocks = {
+      "*" = {
+        addKeysToAgent = "1h"; # or "ask" for confirmation
+      };
+    };
   };
 
   # This value determines the home Manager release that your

@@ -5,7 +5,7 @@
   xdg.configFile."git/gitcommitmessage".source = ./configs/gitcommitmessage;
   programs.git = {
     enable = true;
-    extraConfig = {
+    settings = {
       init = {
         defaultBranch = "master";
       };

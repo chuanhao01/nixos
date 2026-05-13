@@ -10,8 +10,9 @@ in
     "${programsRoot}/git/config.nix"
     "${programsRoot}/nvim/config.nix"
     "${programsRoot}/vifm/config.nix"
-    "${programsRoot}/tmux/config.nix"
     "${programsRoot}/vscode/config.nix"
+    "${programsRoot}/vscode-server/config.nix"
+    "${programsRoot}/tmux/config.nix"
     "${programsRoot}/zsh/config.nix"
   ];
 

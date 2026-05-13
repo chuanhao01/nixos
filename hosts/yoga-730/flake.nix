@@ -46,6 +46,11 @@ in
         # Tailscale to allow for subnet routing and exit nodes
         services.tailscale.useRoutingFeatures = "both";
 
+        services.logind.settings = {
+          Login = {
+            lidSwitchExternalPower = "ignore";
+          };
+        };
       }
     )
 
