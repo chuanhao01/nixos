@@ -10,6 +10,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    turbovnc
     x11vnc
     # anydesk
     # xorg.xvfb
