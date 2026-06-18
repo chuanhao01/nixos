@@ -32,6 +32,12 @@ in
 
           "${programsRoot}/qtile/config.nix"
           "${programsRoot}/kitty/config.nix"
+
+          "${programsRoot}/hyprland/config.nix"
+
+          "${programsRoot}/nvidia/config.nix"
+
+          ./config.nix
         ];
 
         # Hostname
@@ -79,6 +85,8 @@ in
 
           "${programsRoot}/qtile/home.nix"
           "${programsRoot}/kitty/home.nix"
+
+          "${programsRoot}/hyprland/home.nix"
         ];
       };
     }

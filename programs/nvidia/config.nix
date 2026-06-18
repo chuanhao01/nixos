@@ -20,6 +20,11 @@
   };
 
   config = lib.mkIf config.nvidia.enable {
+    environment.systemPackages = with pkgs; [
+      lshw
+      pciutils
+    ];
+
     # Enable cache for bin and faster for nvidia
     nix.settings = {
       substituters = [
@@ -61,7 +66,8 @@
         # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus
         # Only available from driver 515.43.04+
         # Currently alpha-quality/buggy, so false is currently the recommended setting.
-        open = true;
+        # open = true;
+        open = false;
 
         # Enable the Nvidia settings menu,
         # accessible via `nvidia-settings`.
@@ -70,6 +76,12 @@
         # Optionally, you may need to select the appropriate driver version for your specific GPU.
         # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/os-specific/linux/nvidia-x11/default.nix
         package = config.boot.kernelPackages.nvidiaPackages.beta;
+
+        # prime ={
+        #   sync.enable = true;
+        #   intelBusId = "PCI:0000:00:02";
+        #   nvidiaBusId = "PCI:0000:3a:00";
+        # };
       };
     };
 

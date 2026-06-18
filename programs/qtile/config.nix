@@ -10,8 +10,15 @@
   };
 
   environment.systemPackages = with pkgs; [
+    /**
+      Using any vnc solution kinda sucks, better to use vscode over ssh
+      But its better to have it than nothing
+    */
     turbovnc
     x11vnc
+    /**
+      If I ever need a better remote vnc solution with internet access ig
+    */
     # anydesk
     # xorg.xvfb
     xorg.xrandr
