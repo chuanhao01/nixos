@@ -46,10 +46,24 @@ in
         # Tailscale to allow for subnet routing and exit nodes
         services.tailscale.useRoutingFeatures = "both";
 
+        # Ignore closing the lid of the laptop to do anything
         services.logind.settings = {
           Login = {
-            lidSwitchExternalPower = "ignore";
+            HandleLidSwitch = "ignore";
+            HandleLidSwitchExternalPower = "ignore";
           };
+        };
+
+        # Since we are using nvidia, we have a custom user option we need to enable
+        nvidia.enable = true;
+
+        users.users.chuanhao01 = {
+          extraGroups = [
+            "wheel"
+            "video"
+            "input"
+            "render"
+          ];
         };
       }
     )
