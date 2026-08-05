@@ -6,6 +6,7 @@ in
 {
 
   imports = [
+    # "${programsRoot}/base-home.nix"
     "${programsRoot}/git/home.nix"
     "${programsRoot}/nvim/home.nix"
     "${programsRoot}/tmux/home.nix"
