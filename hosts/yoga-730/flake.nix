@@ -32,6 +32,7 @@ in
 
           "${programsRoot}/qtile/config.nix"
           "${programsRoot}/kitty/config.nix"
+          "${programsRoot}/rofi/config.nix"
 
           "${programsRoot}/hyprland/config.nix"
 
@@ -102,6 +103,7 @@ in
 
           "${programsRoot}/qtile/home.nix"
           "${programsRoot}/kitty/home.nix"
+          "${programsRoot}/rofi/home.nix"
 
           "${programsRoot}/hyprland/home.nix"
         ];
