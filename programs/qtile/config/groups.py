@@ -110,7 +110,7 @@ class GroupsController:
             workspace = self.set_active_workspace(qtile.current_screen.index, value)
             room = workspace.get_active_room()
 
-            qtile.groups_map[room.group.name].cmd_toscreen(toggle=False)  # type: ignore
+            qtile.groups_map[room.group.name].toscreen(toggle=False)  # type: ignore
 
             # A hacky workaround for multiple same widgets
             # Use the index of the screen as the suffix of the widget name
@@ -154,7 +154,7 @@ class GroupsController:
             workspace = self.get_active_workspace(qtile.current_screen.index)
             room = workspace.set_active_room(value)
 
-            qtile.groups_map[room.group.name].cmd_toscreen(toggle=False)  # type: ignore
+            qtile.groups_map[room.group.name].toscreen(toggle=False)  # type: ignore
 
         @lazy.function
         def to_next_room(qtile: Qtile):  # type: ignore

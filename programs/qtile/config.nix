@@ -25,6 +25,7 @@
 
     xclip # to allow manipulating the xclipboard
     feh # to view images and video
+    imagemagick # for image and import
   ];
 
   # Ports to allow VNC traffic through

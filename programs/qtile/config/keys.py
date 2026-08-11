@@ -13,13 +13,6 @@ from libqtile.log_utils import logger
 
 HOME_PATH_STR = Path("~/").expanduser().as_posix()
 
-# Helper commands
-def run_commands(commands: t.List[str]) -> None:
-    shell_command = Command({"shell": True})
-    for command in commands:
-        shell_command.run([command])
-
-
 @lazy.function
 def spawn_chrome(qtile: Qtile):  # type: ignore
     filter_profiles = ["System Profile"]
@@ -50,17 +43,20 @@ def spawn_chrome(qtile: Qtile):  # type: ignore
         dmenu_output = dmenu_command.get_stdout_str()
         selected_profile = dmenu_output.split("(")[0]
 
-        qtile.cmd_spawn(f"google-chrome-stable --profile-directory={shlex.quote(selected_profile)}")
+        qtile.spawn(f"google-chrome-stable --profile-directory={shlex.quote(selected_profile)}")
 
     except Exception as err:
         logger.warning("spawn_chrome_failed|err=%s", err)
 
 
 @lazy.function()
-def hotkey_screenshot(_: Qtile):  # type: ignore
+def hotkey_screenshot(qtile: Qtile):  # type: ignore
     dt_str = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
     sc_path_str = Path(f"~/Pictures/Screenshots/{dt_str}.png").expanduser().as_posix()
-    run_commands([f"import {sc_path_str}; xclip -sel clip -t image/png {sc_path_str}"])
+    try:
+        qtile.spawn(f"import {sc_path_str}; xclip -sel clip -t image/png {sc_path_str}", shell=True)
+    except Exception as err:
+        logger.warning("screenshot_failed|err=%s", err)
 
 
 hotkeys = [
