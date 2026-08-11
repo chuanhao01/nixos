@@ -1,6 +1,5 @@
 {
   "workbench.editor.enablePreviewFromQuickOpen": false,
-  "chat.disableAIFeatures": true,
   // Files
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
