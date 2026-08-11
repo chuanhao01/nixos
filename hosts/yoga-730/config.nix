@@ -4,8 +4,11 @@
   environment.systemPackages = with pkgs; [
     # See if I can use it as a remote photo editing server
     darktable
+    vlc
+
     # display
     arandr
+
     # Browsers - Using sync to maintain the different profiles
     firefox
     google-chrome

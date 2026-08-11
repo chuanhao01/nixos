@@ -22,6 +22,9 @@
     # anydesk
     # xorg.xvfb
     xorg.xrandr
+
+    xclip # to allow manipulating the xclipboard
+    feh # to view images and video
   ];
 
   # Ports to allow VNC traffic through
