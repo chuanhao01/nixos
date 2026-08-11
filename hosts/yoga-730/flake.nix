@@ -57,6 +57,7 @@ in
         # Ignore closing the lid of the laptop to do anything
         services.logind.settings = {
           Login = {
+            IdleAction= "ignore";
             HandleLidSwitch = "ignore";
             HandleLidSwitchExternalPower = "ignore";
           };
