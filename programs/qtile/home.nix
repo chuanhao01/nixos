@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   xdg.configFile."qtile" = {
     source = ./config;
@@ -20,7 +20,7 @@
   };
 
   # Since qtile expects these dirs to exist
-  home.activation.createCustomDirs = pkgs.lib.hm.dag.entryAfter ["writeBoundary"] ''
+  home.activation.createCustomDirs = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     $DRY_RUN_CMD mkdir -p $HOME/Development
     $DRY_RUN_CMD mkdir -p $HOME/Pictures/Screenshots
   '';
