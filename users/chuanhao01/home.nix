@@ -43,6 +43,7 @@ in
     ];
   };
 
+  # setups zsh
   programs.zsh.oh-my-zsh = {
     custom = "$HOME/.machine-dotfiles/zsh";
     theme = "powerlevel10k/powerlevel10k";
