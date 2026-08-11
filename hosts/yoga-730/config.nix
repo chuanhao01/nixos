@@ -12,6 +12,7 @@
     # Browsers - Using sync to maintain the different profiles
     firefox
     google-chrome
+    discord
 
     keepassxc
     syncthing
