@@ -11,9 +11,8 @@
       size = 10; # Adjust to your preference
     };
 
-    # Other Kitty settings, like theme:
-    # theme = "Catppuccin-Macchiato"; # If you're using a theme
+    settings = {
+      enable_audio_bell = false;
+    };
   };
-
-
 }
