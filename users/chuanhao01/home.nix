@@ -43,7 +43,6 @@ in
     ];
   };
 
-  # setups zsh
   programs.zsh.oh-my-zsh = {
     custom = "$HOME/.machine-dotfiles/zsh";
     theme = "powerlevel10k/powerlevel10k";
@@ -54,7 +53,7 @@ in
     source-file ~/.machine-dotfiles/tmux/.tmux/.tmux.conf
     source-file ~/.machine-dotfiles/tmux/.tmux.conf.local
   '';
-
+  programs.vifm.extraConfig = "source $HOME/.machine-dotfiles/vifm/vifmrc";
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;
