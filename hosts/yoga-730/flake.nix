@@ -33,6 +33,7 @@ in
           "${programsRoot}/qtile/config.nix"
           "${programsRoot}/kitty/config.nix"
           "${programsRoot}/rofi/config.nix"
+          "${programsRoot}/kanata/config.nix"
 
           "${programsRoot}/hyprland/config.nix"
 
