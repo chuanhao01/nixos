@@ -1,12 +1,12 @@
 # NixOS Config?
 
-Very WIP and TODO  
-Stuff is not organized and could change at anytime  
-Not all commits can be built  
-Also some run-time/stateful configs are needed as well  
+Very WIP and TODO
+Stuff is not organized and could change at anytime
+Not all commits can be built
+Also some run-time/stateful configs are needed as well
 
-If you are using the hosts config and users  
-You should get a working system with my dotfiles installed (mostly beside host customized configs)  
+If you are using the hosts config and users
+You should get a working system with my dotfiles installed (mostly beside host customized configs)
 
 ## Before building
 
@@ -21,6 +21,23 @@ In the `users/chuanhao01`
 - ssh keys to be used by github
   - Stored on the system and not tracked
   - `ssh-keygen -t ed25519`
+
+## Upgrading Nixos
+
+Look [here](https://nixos.org/manual/nixos/stable/#sec-upgrading)
+
+```bash
+# To get your current version
+sudo nix-channel --list | grep nixos
+
+# To upgrade to a newer version
+sudo nix-channel --add https://channels.nixos.org/nixos-26.05 nixos
+
+# To pull the update
+sudo nix-channel --update nixos
+
+# Then just make yoga-730 etc
+```
 
 ## Helpful Commands
 
