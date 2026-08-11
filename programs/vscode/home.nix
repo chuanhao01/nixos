@@ -53,8 +53,8 @@
             {
               name = "vscode-python-envs";
               publisher = "ms-python";
-              version = "1.10.0";
-              sha256 = "sha256-fhrV9sPjgwp1+ZDMu7iU7To2R0hcAF388w99yCMiHQA=";
+              version = "1.34.0";
+              sha256 = "sha256-K8/xr4Oede+W/dvBWzUS/miQrFOHluz3ic6D4AhYurY=";
             }
           ];
 
