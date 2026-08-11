@@ -15,6 +15,7 @@
             eamodio.gitlens
 
             mkhl.direnv
+            jnoortheen.nix-ide
 
             ms-azuretools.vscode-docker
             ms-vscode-remote.remote-ssh
