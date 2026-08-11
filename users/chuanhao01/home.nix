@@ -55,7 +55,7 @@ in
   '';
   programs.vifm = {
     enable = true;
-    extraConfig = "source $HOME/.machine-dotfiles/vifm/vifmrc";
+    extraConfig = "source $HOME/.machine-dotfiles/vifm/vifmrc\nsource $HOME/.machine-dotfiles/vifm/colors/chuanhao01.vifm";
   };
   programs.direnv = {
     enable = true;
