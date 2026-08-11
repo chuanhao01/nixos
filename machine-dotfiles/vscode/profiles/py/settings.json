@@ -78,5 +78,6 @@
   },
   "[html][javascript][json][jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "chat.disableAIFeatures": true
 }

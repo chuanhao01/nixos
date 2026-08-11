@@ -53,7 +53,10 @@ in
     source-file ~/.machine-dotfiles/tmux/.tmux/.tmux.conf
     source-file ~/.machine-dotfiles/tmux/.tmux.conf.local
   '';
-  programs.vifm.extraConfig = "source $HOME/.machine-dotfiles/vifm/vifmrc";
+  programs.vifm = {
+    enable = true;
+    extraConfig = "source $HOME/.machine-dotfiles/vifm/vifmrc";
+  };
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;
