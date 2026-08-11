@@ -18,8 +18,8 @@
     pwvucontrol
 
     # Bluetooth
-    # bluez # Bluetooth support
-    # bluez-tools # Bluetooth tools
+    bluez # Bluetooth support
+    bluez-tools # Bluetooth tools
   ];
 
   # Audio
@@ -33,8 +33,9 @@
 
 
   # Bluetooth
-  # hardware.bluetooth = {
-  #   enable = true;
-  #   powerOnBoot = true;
-  # };
+  services.blueman.enable = true; # for blueman-applet and blueman-manager
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
 }
