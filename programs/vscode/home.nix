@@ -16,6 +16,7 @@
 
             mkhl.direnv
             jnoortheen.nix-ide
+            myriad-dreamin.tinymist
 
             ms-azuretools.vscode-docker
             ms-vscode-remote.remote-ssh
