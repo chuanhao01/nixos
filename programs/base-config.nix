@@ -12,7 +12,7 @@
     nmap
 
     # To have the nixfmt utility
-    nixfmt-rfc-style
+    nixfmt
   ];
   # udisks
   services.udisks2.enable = true;

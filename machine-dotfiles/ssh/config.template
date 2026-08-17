@@ -1,0 +1,5 @@
+Host myserver
+    HostName server.example.com
+    User username
+    IdentityFile ~/.ssh/FILE
+    SetEnv TERM=xterm ANOTHER=WOW

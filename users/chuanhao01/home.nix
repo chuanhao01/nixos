@@ -44,7 +44,7 @@ in
   };
 
   programs.zsh.oh-my-zsh = {
-    custom = "$HOME/.machine-dotfiles/zsh";
+    custom = "${config.home.homeDirectory}/.machine-dotfiles/zsh";
     theme = "powerlevel10k/powerlevel10k";
   };
   programs.tmux.extraConfig = ''
@@ -67,7 +67,10 @@ in
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    matchBlocks = {
+    includes = [
+      "~/.machine-dotfiles/ssh/config"
+    ];
+    settings = {
       "*" = {
         addKeysToAgent = "1h"; # or "ask" for confirmation
       };

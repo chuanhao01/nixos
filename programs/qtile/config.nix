@@ -21,7 +21,7 @@
     */
     # anydesk
     # xorg.xvfb
-    xorg.xrandr
+    xrandr
 
     xclip # to allow manipulating the xclipboard
     feh # to view images and video
