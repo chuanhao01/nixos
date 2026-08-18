@@ -48,6 +48,33 @@ def spawn_chrome(qtile: Qtile):  # type: ignore
     except Exception as err:
         logger.warning("spawn_chrome_failed|err=%s", err)
 
+@lazy.function()
+def spawn_firefox(qtile: Qtile):
+    try:
+        # This is just for the nixos-yoga-730 setup
+        mapping = {
+            "personal": "/home/chuanhao01/.config/mozilla/firefox/j5iqxLDe.Profile 1",
+            "developer": "/home/chuanhao01/.config/mozilla/firefox/kIqfG3Zp.Profile 3",
+            "education": "/home/chuanhao01/.config/mozilla/firefox/TrzC5tNh.Profile 4",
+            "work": "/home/chuanhao01/.config/mozilla/firefox/c4nXFVGw.Profile 5",
+            "random": "/home/chuanhao01/.config/mozilla/firefox/tag7KRCf.Profile 6",
+            "chuanhao": "/home/chuanhao01/.config/mozilla/firefox/W0Y40GSf.Profile 7",
+        }
+        names = list(mapping.keys())
+        dmenu_preference_str = shlex.quote("\n".join(names))
+        dmenu_command = CaptureCommand()
+        dmenu_command.run(
+            [f"echo {dmenu_preference_str} | rofi -dmenu -only-match -p 'Firefox'"]
+        )
+        if not dmenu_command.check_successful():
+            logger.info("No Chrome selected")
+            return
+        dmenu_output = dmenu_command.get_stdout_str().strip()
+        logger.info(dmenu_output)
+        qtile.spawn(f"firefox --profile '{mapping[dmenu_output]}'")
+    except Exception as err:
+        logger.warning("spawn_firefox_failed|err=%s", err)
+
 
 @lazy.function()
 def hotkey_screenshot(qtile: Qtile):  # type: ignore
@@ -107,6 +134,7 @@ hotkeys = [
     Key([MOD_KEY], "u", lazy.window.disable_floating(), desc="Tile back the window"),
     # Applications
     Key([MOD_KEY], "g", spawn_chrome()),  # pylint: disable=no-value-for-parameter
+    Key([MOD_KEY], "f", spawn_firefox()),  # pylint: disable=no-value-for-parameter
     # Hotkeys
     Key([MOD_KEY], "s", hotkey_screenshot()),  # pylint: disable=no-value-for-parameter
     Key(
