@@ -123,19 +123,18 @@
               ms-vscode.cmake-tools
             ]);
 
-          userSettings = config.lib.file.mkOutOfStoreSymlink "${profileBaseDir}/default/settings.json";
-          keybindings = config.lib.file.mkOutOfStoreSymlink "${profileBaseDir}/default/keybindings.json";
+          userSettings = config.lib.file.mkOutOfStoreSymlink "${profileBaseDir}/dendron/settings.json";
+          keybindings = config.lib.file.mkOutOfStoreSymlink "${profileBaseDir}/dendron/keybindings.json";
         };
       };
 
   };
   programs.zsh.shellAliases = {
-    code-py = "code --profile python";
-    code-rust = "code --profile rust";
-    code-js = "code --profile js";
-    code-java = "code --profile java";
-    code-dendron = "code --profile dendron";
-    code-cpp = "code --profile cpp";
-
+    code-py = "code --profile 'python'";
+    code-rust = "code --profile 'rust'";
+    code-js = "code --profile 'js'";
+    code-java = "code --profile 'java'";
+    code-dendron = "code --profile 'dendron'";
+    code-cpp = "code --profile 'cpp'";
   };
 }
