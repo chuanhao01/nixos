@@ -24,6 +24,9 @@
     # Bluetooth
     bluez # Bluetooth support
     bluez-tools # Bluetooth tools
+
+    zip
+    unzip
   ];
 
   # Audio
