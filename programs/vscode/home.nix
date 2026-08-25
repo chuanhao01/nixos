@@ -22,6 +22,8 @@
             ms-vscode-remote.remote-ssh
 
             yzhang.markdown-all-in-one
+            redhat.vscode-yaml
+            tamasfe.even-better-toml
 
             esbenp.prettier-vscode
           ]
@@ -46,21 +48,21 @@
           extensions =
             baseExtensions
             ++ (with pkgs.vscode-extensions; [
-              redhat.vscode-yaml
               charliermarsh.ruff
 
               ms-python.python
               ms-python.debugpy
               ms-python.vscode-pylance
-            ])
-            ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-              {
-                name = "vscode-python-envs";
-                publisher = "ms-python";
-                version = "1.34.0";
-                sha256 = "sha256-K8/xr4Oede+W/dvBWzUS/miQrFOHluz3ic6D4AhYurY=";
-              }
-            ];
+              ms-python.vscode-python-envs
+            ]);
+          # ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+          #   {
+          #     name = "vscode-python-envs";
+          #     publisher = "ms-python";
+          #     version = "1.34.0";
+          #     sha256 = "sha256-K8/xr4Oede+W/dvBWzUS/miQrFOHluz3ic6D4AhYurY=";
+          #   }
+          # ];
 
           userSettings = config.lib.file.mkOutOfStoreSymlink "${profileBaseDir}/py/settings.json";
           keybindings = config.lib.file.mkOutOfStoreSymlink "${profileBaseDir}/py/keybindings.json";
@@ -70,8 +72,6 @@
             baseExtensions
             ++ (with pkgs.vscode-extensions; [
               rust-lang.rust-analyzer
-              tamasfe.even-better-toml
-              redhat.vscode-yaml
             ]);
 
           userSettings = config.lib.file.mkOutOfStoreSymlink "${profileBaseDir}/rust/settings.json";
@@ -81,8 +81,6 @@
           extensions =
             baseExtensions
             ++ (with pkgs.vscode-extensions; [
-              tamasfe.even-better-toml
-              redhat.vscode-yaml
               bradlc.vscode-tailwindcss
             ]);
 
@@ -93,8 +91,36 @@
           extensions =
             baseExtensions
             ++ (with pkgs.vscode-extensions; [
-              tamasfe.even-better-toml
-              redhat.vscode-yaml
+              vscjava.vscode-java-pack
+            ]);
+
+          userSettings = config.lib.file.mkOutOfStoreSymlink "${profileBaseDir}/default/settings.json";
+          keybindings = config.lib.file.mkOutOfStoreSymlink "${profileBaseDir}/default/keybindings.json";
+        };
+        dendron = {
+          extensions =
+            baseExtensions
+            ++ (with pkgs.vscode-extensions; [
+              dendron.dendron
+            ]);
+
+          userSettings = config.lib.file.mkOutOfStoreSymlink "${profileBaseDir}/default/settings.json";
+          keybindings = config.lib.file.mkOutOfStoreSymlink "${profileBaseDir}/default/keybindings.json";
+        };
+        cpp = {
+          extensions =
+            baseExtensions
+            ++ (with pkgs.vscode-extensions; [
+              # Python as well
+              charliermarsh.ruff
+
+              ms-python.python
+              ms-python.debugpy
+              ms-python.vscode-pylance
+              ms-python.vscode-python-envs
+
+              ms-vscode.cpptools
+              ms-vscode.cmake-tools
             ]);
 
           userSettings = config.lib.file.mkOutOfStoreSymlink "${profileBaseDir}/default/settings.json";
@@ -108,5 +134,8 @@
     code-rust = "code --profile rust";
     code-js = "code --profile js";
     code-java = "code --profile java";
+    code-dendron = "code --profile dendron";
+    code-cpp = "code --profile cpp";
+
   };
 }
