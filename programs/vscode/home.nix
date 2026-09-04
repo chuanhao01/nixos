@@ -92,6 +92,13 @@
             baseExtensions
             ++ (with pkgs.vscode-extensions; [
               vscjava.vscode-java-pack
+              vscjava.vscode-maven
+              vscjava.vscode-gradle
+              vscjava.vscode-java-debug
+              vscjava.vscode-java-test
+              redhat.java
+              vscjava.vscode-java-dependency
+              oracle.oracle-java
             ]);
 
           userSettings = config.lib.file.mkOutOfStoreSymlink "${profileBaseDir}/default/settings.json";
