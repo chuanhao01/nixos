@@ -11,6 +11,11 @@ in
 {
   inherit system;
 
+  # To allow for passing down args
+  specialArgs = {
+    inherit usersRoot programsRoot inputs;
+  };
+
   modules = [
     (
       {
@@ -37,9 +42,8 @@ in
 
           "${programsRoot}/hyprland/config.nix"
 
-          "${programsRoot}/nvidia/config.nix"
-
           ./config.nix
+          ./nvidia.nix
         ];
 
         # Hostname
@@ -57,29 +61,9 @@ in
         # Ignore closing the lid of the laptop to do anything
         services.logind.settings = {
           Login = {
-            IdleAction= "ignore";
+            IdleAction = "ignore";
             HandleLidSwitch = "ignore";
             HandleLidSwitchExternalPower = "ignore";
-          };
-        };
-
-        # Since we are using nvidia, we have a custom user option we need to enable
-        nvidia.enable = true;
-        # Load NVIDIA driver for Xorg and Wayland
-        services.xserver.videoDrivers = [ "nvidia" ];
-        hardware.nvidia = {
-          # --- CRITICAL FOR LAPTOPS: PRIME Configuration ---
-          # Replace these Bus IDs with the ones obtained from `lspci | grep -E 'VGA|3D'`
-          prime = {
-            offload = {
-              enable = true;
-              enableOffloadCmd = true;
-            };
-            # Or if you want NVIDIA-only mode (muxless/discrete mode):
-            # sync.enable = true;
-
-            intelBusId = "PCI:0:2:0"; # Change to your Intel/AMD integrated GPU bus ID
-            nvidiaBusId = "PCI:58:0:0"; # Change to your NVIDIA GPU bus ID
           };
         };
 
