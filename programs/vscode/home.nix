@@ -133,6 +133,18 @@
           userSettings = config.lib.file.mkOutOfStoreSymlink "${profileBaseDir}/dendron/settings.json";
           keybindings = config.lib.file.mkOutOfStoreSymlink "${profileBaseDir}/dendron/keybindings.json";
         };
+        rust-tauri = {
+          extensions =
+            baseExtensions
+            ++ (with pkgs.vscode-extensions; [
+              rust-lang.rust-analyzer
+              tauri-apps.tauri-vscode
+              bradlc.vscode-tailwindcss
+            ]);
+
+          userSettings = config.lib.file.mkOutOfStoreSymlink "${profileBaseDir}/rust/settings.json";
+          keybindings = config.lib.file.mkOutOfStoreSymlink "${profileBaseDir}/rust/keybindings.json";
+        };
       };
 
   };
@@ -143,5 +155,6 @@
     code-java = "code --profile 'java'";
     code-dendron = "code --profile 'dendron'";
     code-cpp = "code --profile 'cpp'";
+    code-rust-tauri = "code --profile 'rust-tauri'";
   };
 }

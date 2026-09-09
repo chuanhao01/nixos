@@ -27,6 +27,8 @@
 
     zip
     unzip
+
+    # pi-coding-agent
   ];
 
   # Audio
@@ -38,11 +40,20 @@
     pulse.enable = true;
   };
 
-
   # Bluetooth
   services.blueman.enable = true; # for blueman-applet and blueman-manager
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
   };
+
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = with pkgs; [
+    xdg-desktop-portal-gtk
+    kdePackages.xdg-desktop-portal-kde
+  ];
+  xdg.portal.config.common.default = [
+    "kde"
+  ];
+
 }

@@ -30,17 +30,14 @@
       nvidiaSettings = true;
       # Select standard proprietary driver package
       # package = config.boot.kernelPackages.nvidiaPackages.stable;
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
+      # package = config.boot.kernelPackages.nvidiaPackages.beta;
+      package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
 
       # --- CRITICAL FOR LAPTOPS: PRIME Configuration ---
       # Replace these Bus IDs with the ones obtained from `lspci | grep -E 'VGA|3D'`
       prime = {
-        offload = {
-          enable = true;
-          enableOffloadCmd = true;
-        };
         # Or if you want NVIDIA-only mode (muxless/discrete mode):
-        # sync.enable = true;
+        sync.enable = true;
 
         intelBusId = "PCI:0:2:0"; # Change to your Intel/AMD integrated GPU bus ID
         nvidiaBusId = "PCI:58:0:0"; # Change to your NVIDIA GPU bus ID
@@ -51,8 +48,16 @@
 
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = [
+    "modesetting"
     "nvidia"
   ];
+  services.xserver.config = ''
+  Section "Device"
+      Identifier "Integrated Graphics"
+      Driver     "modesetting"
+      Option     "PrimaryGPU" "yes"
+  EndSection
+  '';
 
   boot.blacklistedKernelModules = [ "nouveau" ];
 
