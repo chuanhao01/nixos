@@ -44,6 +44,7 @@ in
 
           ./config.nix
           ./nvidia.nix
+          ./pi.nix
         ];
 
         # Hostname
