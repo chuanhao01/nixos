@@ -99,7 +99,15 @@
               redhat.java
               vscjava.vscode-java-dependency
               oracle.oracle-java
-            ]);
+            ])
+            ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+              {
+                name = "vscode-checkstyle";
+                publisher = "shengchen";
+                version = "1.4.2";
+                sha256 = "sha256-IchgQX9CUQ53puLu0ll8zNl6EzSnVDBj7tTUo5NzZjA=";
+              }
+            ];
 
           userSettings = config.lib.file.mkOutOfStoreSymlink "${profileBaseDir}/default/settings.json";
           keybindings = config.lib.file.mkOutOfStoreSymlink "${profileBaseDir}/default/keybindings.json";
