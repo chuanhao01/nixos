@@ -22,6 +22,7 @@
             ms-vscode-remote.remote-ssh
 
             yzhang.markdown-all-in-one
+            shd101wyy.markdown-preview-enhanced
             redhat.vscode-yaml
             tamasfe.even-better-toml
 
