@@ -81,7 +81,7 @@ def hotkey_screenshot(qtile: Qtile):  # type: ignore
     dt_str = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
     sc_path_str = Path(f"~/Pictures/Screenshots/{dt_str}.png").expanduser().as_posix()
     try:
-        qtile.spawn(f"import {sc_path_str}; xclip -sel clip -t image/png {sc_path_str}", shell=True)
+        qtile.spawn(f"import -silent {sc_path_str}; xclip -sel clip -t image/png {sc_path_str}", shell=True)
     except Exception as err:
         logger.warning("screenshot_failed|err=%s", err)
 
