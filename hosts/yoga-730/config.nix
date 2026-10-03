@@ -28,7 +28,7 @@
     zip
     unzip
 
-    # pi-coding-agent
+    libreoffice
   ];
 
   # Audio
